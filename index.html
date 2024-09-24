@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./blog.html">
 
     <!-- Tailwind Custom Styles -->
     <script>
@@ -45,7 +46,8 @@
                 <!-- left -->
                 <div class="navbar">
                     <div class="navbar-start">
-                        <button class="bg-customGreen btn btn-lg text-xl font-semibold px-8 py-1">Blog</button>
+                        <button class="bg-customGreen btn btn-lg text-xl font-semibold px-8 py-1"><a
+                                href="./blog.html">Blog</a></button>
                     </div>
                     <!-- middle -->
                     <div class="navbar-center space-x-4">
@@ -56,7 +58,7 @@
                     <!-- right -->
                     <div class="navbar-end space-x-2">
                         <img src="./assets/coin.png" alt="">
-                        <h5 class="text-xl font-semibold">5000</h5>
+                        <h5 id="my-balance" class="text-xl font-semibold">5000</h5>
                         <h4 class="text-xl font-semibold">BDT</h4>
                     </div>
 
@@ -68,18 +70,18 @@
 
         <!-- Donate and History Button -->
         <div class="flex justify-center gap-x-4 mt-7 md:mt-12 relative">
-            <button class="btn btn-lg px-10 text-xl font-semibold">Donate</button>
-            <button class="btn btn-lg px-10 text-xl font-semibold">History</button>
+            <button id="donate-btn" class="rounded-lg btn-lg px-10 text-xl font-semibold bg-customGreen">Donate</button>
+            <button id="history-btn" class=" rounded-lg  btn-lg px-10 text-xl font-semibold ">History</button>
         </div>
         <div class="divider"></div>
 
     </header>
 
     <main>
-        <section class="w-[85%] mx-auto  space-y-7">
+        <section id="card-container" class="w-[85%] mx-auto  space-y-7">
 
             <!-- card-1 (Noakhali, Bangladesh) -->
-            <div class="relative z-0  border border-5 border-r-gray-200 rounded-2xl">
+            <div id="" class="relative z-0  border border-5 border-r-gray-200 rounded-2xl">
                 <div class="hero ">
                     <div class="hero-content flex-col lg:flex-row gap-x-10">
                         <!-- Noakhali Image -->
@@ -89,7 +91,7 @@
                             <div
                                 class="rounded-lg p-7 flex items-center space-x-2 bg-[#1111110D] w-[150px] h-[44px] justify-center mb-4">
                                 <img src="./assets/coin.png" alt="">
-                                <h5 class="text-xl font-semibold">5000</h5>
+                                <h5 id="noakhali-balance" class="text-xl font-semibold">0</h5>
                                 <h4 class="text-xl font-semibold">BDT</h4>
                             </div>
 
@@ -103,10 +105,11 @@
 
                             <!-- Form -->
                             <form class="mt-6 w-full">
-                                <input type="text" placeholder="Write Donation Amount"
+                                <input id="input-noakhali-amount" type="text" placeholder="Write Donation Amount"
                                     class="input input-bordered w-full" required />
                                 <div class="form-control mt-6 ">
-                                    <button class="btn bg-customGreen w-full">Donate Now</button>
+                                    <button id="donate-noakhali-btn" class="btn bg-customGreen w-full">Donate
+                                        Now</button>
                                 </div>
                             </form>
                         </div>
@@ -125,7 +128,7 @@
                             <div
                                 class="rounded-lg p-7 flex items-center space-x-2 bg-[#1111110D] w-[150px] h-[44px] justify-center mb-4">
                                 <img src="./assets/coin.png" alt="">
-                                <h5 class="text-xl font-semibold">5000</h5>
+                                <h5 id="feni-balance" class="text-xl font-semibold">0</h5>
                                 <h4 class="text-xl font-semibold">BDT</h4>
                             </div>
 
@@ -138,10 +141,10 @@
                                 donating today to assist those in urgent need.</p>
                             <!-- Form -->
                             <form class="mt-6 w-full">
-                                <input type="text" placeholder="Write Donation Amount"
+                                <input id="input-feni-amount" type="text" placeholder="Write Donation Amount"
                                     class="input input-bordered w-full" required />
                                 <div class="form-control mt-6 ">
-                                    <button class="btn bg-customGreen w-full">Donate Now</button>
+                                    <button id="donate-feni-btn" class="btn bg-customGreen w-full">Donate Now</button>
                                 </div>
                             </form>
                         </div>
@@ -160,7 +163,7 @@
                             <div
                                 class="rounded-lg p-7 flex items-center space-x-2 bg-[#1111110D] w-[150px] h-[44px] justify-center mb-4">
                                 <img src="./assets/coin.png" alt="">
-                                <h5 class="text-xl font-semibold">5000</h5>
+                                <h5 id="quota-balance" class="text-xl font-semibold">0</h5>
                                 <h4 class="text-xl font-semibold">BDT</h4>
                             </div>
 
@@ -175,10 +178,10 @@
 
                             <!-- Form -->
                             <form class="mt-6 w-full">
-                                <input type="text" placeholder="Write Donation Amount"
+                                <input id="input-quota-amount" type="text" placeholder="Write Donation Amount"
                                     class="input input-bordered w-full" required />
                                 <div class="form-control mt-6 ">
-                                    <button class="btn bg-customGreen w-full">Donate Now</button>
+                                    <button id="donate-quota-btn" class="btn bg-customGreen w-full">Donate Now</button>
                                 </div>
                             </form>
                         </div>
@@ -186,20 +189,39 @@
                 </div>
             </div>
 
-
         </section>
+
+        <!-- Transaction starts -->
+        <div id="history-list" class=" text-center hidden">
+            <h2 class=" text-3xl text-center">Transaction History</h2>
+            <div id="history-container" class="space-y-5">
+
+            </div>
+        </div>
+
+        <!-- Transaction ends -->
     </main>
 
-    <footer>
+    <!-- pop-up Modal -->
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal flex items-center justify-center">
+        <div class="modal-box text-center">
+            <h2 class="font-bold text-lg">Congrats!</h2>
+            <img class="mx-auto my-4" src="./assets/coin.png" alt="">
+            <p>You Have Donated for Humankind.</p>
+            <h3 class="text-xl font-bold">Successfully</h3>
+            <div class="modal-action justify-center">
+                <button id="close-modal" class="btn">close confirmation</button>
+            </div>
+        </div>
+    </div>
 
-    </footer>
 
     <!-- JavaScript file added -->
+    <script src="./js/features.js"></script>
     <script src="./js/utilities.js"></script>
     <script src="./js/donate.js"></script>
-
 
 </body>
 
 </html>
-
