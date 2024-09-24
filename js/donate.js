@@ -24,7 +24,7 @@ document.getElementById('donate-noakhali-btn').addEventListener('click', functio
         document.getElementById('success-modal').classList.add('modal-open');
 
        // noakhali call
-       createTransactionDiv('Noakhali-2024', noakhaliNewBalance);
+       createTransactionDiv(noakhaliNewBalance, 'Noakhali-2024');
     }
     else {
         alert('You have no sufficient balance');
@@ -56,7 +56,7 @@ document.getElementById('donate-feni-btn').addEventListener('click', function (e
         document.getElementById('success-modal').classList.add('modal-open');
 
        // Add Feni history
-       createTransactionDiv('Feni-2024', feniNewBalance);
+       createTransactionDiv(feniNewBalance, 'Feni-2024');
     }
     else {
         alert('You have no sufficient balance');
@@ -88,7 +88,7 @@ document.getElementById('donate-quota-btn').addEventListener('click', function (
         document.getElementById('success-modal').classList.add('modal-open');
 
          // Add Quota history
-         createTransactionDiv('Quota Movement', quotaNewBalance);
+         createTransactionDiv(quotaNewBalance, 'Quota Movement');
     }
     else {
         alert('You have no sufficient balance');
@@ -99,3 +99,4 @@ document.getElementById('donate-quota-btn').addEventListener('click', function (
 document.getElementById('close-modal').addEventListener('click', function () {
     document.getElementById('success-modal').classList.remove('modal-open');
 });
+

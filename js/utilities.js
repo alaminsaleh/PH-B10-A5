@@ -23,10 +23,10 @@ function showSectionById(id){
 }
 
 // History show function
-function createTransactionDiv(place, amount) {
+function createTransactionDiv(amount, place) {
     // Create div element
     const div = document.createElement('div');
-    div.classList.add('text-left', 'w-[50%]', 'p-3', 'mx-auto', 'h-[80px]', 'border', 'border-5', 'border-gray-300', 'rounded-lg');
+    div.classList.add('text-left', 'md:w-[50%]','w-[85%]', 'p-3', 'mx-auto', 'h-auto', 'border', 'border-5', 'border-gray-300', 'rounded-lg');
   
     // Get the current date and time
     const currentDate = new Date();
@@ -40,3 +40,4 @@ function createTransactionDiv(place, amount) {
     // Append the div
     document.getElementById('history-container').appendChild(div);
   }
+
