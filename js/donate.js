@@ -30,7 +30,7 @@ document.getElementById('donate-noakhali-btn').addEventListener('click', functio
         // trans
         // Create div element
         const div = document.createElement('div');
-        div.classList.add('w-[50%]', 'mx-auto', 'h-[100px]', 'border', 'border-5', 'border-gray-800');
+        div.classList.add('text-left', 'w-[50%]', 'p-3', 'mx-auto', 'h-[80px]', 'border', 'border-5',  'border-gray-300', 'rounded-lg');
 
         // Noakhali History
         // Get the current date and time
@@ -38,7 +38,7 @@ document.getElementById('donate-noakhali-btn').addEventListener('click', functio
 
         // Format the inner HTML with the donation message and the date
         div.innerHTML = `
-        <p> ${noakhaliNewBalance} Taka is Donated for Noakhali-2024, Bangladesh </p>
+        <p class="font-bold"> ${noakhaliNewBalance} Taka is Donated for Noakhali-2024, Bangladesh </p>
         <p>Date: ${currentDate}</p>
     `;
 
@@ -86,14 +86,14 @@ document.getElementById('donate-feni-btn').addEventListener('click', function (e
         // Feni history
         // Create div element
         const div = document.createElement('div');
-        div.classList.add('w-[50%]', 'mx-auto', 'h-[100px]', 'border', 'border-5', 'border-gray-800');
+        div.classList.add('text-left', 'w-[50%]', 'p-3', 'mx-auto', 'h-[80px]', 'border', 'border-5',  'border-gray-300', 'rounded-lg');
 
         // Get the current date and time
         const currentDate = new Date();
 
         // Format the inner HTML with the donation message and the date
         div.innerHTML = `
-        <p> ${feniNewBalance} Taka is Feni-2024, Bangladesh </p>
+        <p class="font-bold"> ${feniNewBalance} Taka is Feni-2024, Bangladesh </p>
         <p>Date: ${currentDate}</p>
     `;
 
@@ -136,14 +136,14 @@ document.getElementById('donate-quota-btn').addEventListener('click', function (
          // Quota history
         // Create div element
         const div = document.createElement('div');
-        div.classList.add('w-[50%]', 'mx-auto', 'h-[100px]', 'border', 'border-5', 'border-gray-800');
+        div.classList.add('text-left', 'w-[50%]', 'p-3', 'mx-auto', 'h-[80px]', 'border', 'border-5',  'border-gray-300', 'rounded-lg');
 
         // Get the current date and time
         const currentDate = new Date();
 
         // Format the inner HTML with the donation message and the date
         div.innerHTML = `
-        <p> ${quotaNewBalance} Taka is Quota Movement help, Bangladesh </p>
+        <p class="font-bold"> ${quotaNewBalance} Taka is Quota Movement help, Bangladesh </p>
         <p>Date: ${currentDate}</p>
     `;
 
@@ -151,7 +151,6 @@ document.getElementById('donate-quota-btn').addEventListener('click', function (
         document.getElementById('history-container').appendChild(div);
 
         
-
     }
     else {
         alert('You have no sufficient balance');
