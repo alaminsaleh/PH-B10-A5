@@ -1,6 +1,4 @@
 // Noakhali JS
-
-
 document.getElementById('donate-noakhali-btn').addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -18,7 +16,6 @@ document.getElementById('donate-noakhali-btn').addEventListener('click', functio
         const myNewBalance = balance - addAmount;
         const noakhaliNewBalance = addAmount + noakhaliBalance;
 
-
         document.getElementById('my-balance').innerText = myNewBalance;
         document.getElementById('noakhali-balance').innerText = noakhaliNewBalance;
 
@@ -26,39 +23,15 @@ document.getElementById('donate-noakhali-btn').addEventListener('click', functio
         // modal
         document.getElementById('success-modal').classList.add('modal-open');
 
-
-        // trans
-        // Create div element
-        const div = document.createElement('div');
-        div.classList.add('text-left', 'w-[50%]', 'p-3', 'mx-auto', 'h-[80px]', 'border', 'border-5',  'border-gray-300', 'rounded-lg');
-
-        // Noakhali History
-        // Get the current date and time
-        const currentDate = new Date();
-
-        // Format the inner HTML with the donation message and the date
-        div.innerHTML = `
-        <p class="font-bold"> ${noakhaliNewBalance} Taka is Donated for Noakhali-2024, Bangladesh </p>
-        <p>Date: ${currentDate}</p>
-    `;
-
-        // Append the div to the history-container
-        document.getElementById('history-container').appendChild(div);
-
-
+       // noakhali call
+       createTransactionDiv('Noakhali-2024', noakhaliNewBalance);
     }
     else {
         alert('You have no sufficient balance');
     }
-
-
-
 });
 
-
-
-// Feni
-
+// Feni JS
 document.getElementById('donate-feni-btn').addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -79,37 +52,18 @@ document.getElementById('donate-feni-btn').addEventListener('click', function (e
         document.getElementById('my-balance').innerText = myNewBalance;
         document.getElementById('feni-balance').innerText = feniNewBalance;
 
-        // modal
+        // pop-up modal
         document.getElementById('success-modal').classList.add('modal-open');
 
-
-        // Feni history
-        // Create div element
-        const div = document.createElement('div');
-        div.classList.add('text-left', 'w-[50%]', 'p-3', 'mx-auto', 'h-[80px]', 'border', 'border-5',  'border-gray-300', 'rounded-lg');
-
-        // Get the current date and time
-        const currentDate = new Date();
-
-        // Format the inner HTML with the donation message and the date
-        div.innerHTML = `
-        <p class="font-bold"> ${feniNewBalance} Taka is Feni-2024, Bangladesh </p>
-        <p>Date: ${currentDate}</p>
-    `;
-
-        // Append the div to the history-container
-        document.getElementById('history-container').appendChild(div);
-
+       // Add Feni history
+       createTransactionDiv('Feni-2024', feniNewBalance);
     }
     else {
         alert('You have no sufficient balance');
     }
-
 });
 
-
-// quota movement
-
+// Quota movement
 document.getElementById('donate-quota-btn').addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -133,37 +87,15 @@ document.getElementById('donate-quota-btn').addEventListener('click', function (
         // modal
         document.getElementById('success-modal').classList.add('modal-open');
 
-         // Quota history
-        // Create div element
-        const div = document.createElement('div');
-        div.classList.add('text-left', 'w-[50%]', 'p-3', 'mx-auto', 'h-[80px]', 'border', 'border-5',  'border-gray-300', 'rounded-lg');
-
-        // Get the current date and time
-        const currentDate = new Date();
-
-        // Format the inner HTML with the donation message and the date
-        div.innerHTML = `
-        <p class="font-bold"> ${quotaNewBalance} Taka is Quota Movement help, Bangladesh </p>
-        <p>Date: ${currentDate}</p>
-    `;
-
-        // Append the div to the history-container
-        document.getElementById('history-container').appendChild(div);
-
-        
+         // Add Quota history
+         createTransactionDiv('Quota Movement', quotaNewBalance);
     }
     else {
         alert('You have no sufficient balance');
     }
-
 });
-
-
 
 // event handler of the modal
 document.getElementById('close-modal').addEventListener('click', function () {
     document.getElementById('success-modal').classList.remove('modal-open');
 });
-
-
-
